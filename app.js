@@ -36,6 +36,20 @@ app.get('/pokemons', (req, res) => {
   res.json(pokemonsAsh);
 });
 
+app.post('/series', (req, res) => {
+  const minhasSeries = [
+    { id: 1, nome: 'Steven Universe', genero: 'Animação/Sci-Fi' },
+    { id: 2, nome: 'We Bare Bears', genero: 'Comédia' },
+    { id: 3, nome: 'Coraline e o Mundo Secreto' }, 
+  ];
+  
+ 
+  res.status(201).json({
+    mensagem: "Lista de séries favoritas recuperada com sucesso!",
+    series: minhasSeries
+  });
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
