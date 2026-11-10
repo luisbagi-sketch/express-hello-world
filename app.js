@@ -20,6 +20,22 @@ app.get('/tico', (req, res) => {
   res.send('teco');
 });
 
+app.get('/pokemons', (req, res) => {
+  const pokemonsAsh = [
+    { id: 1, nome: 'Pikachu' },
+    { id: 2, nome: 'Caterpie' },
+    { id: 3, nome: 'Pidgeotto' },
+    { id: 4, nome: 'Bulbasaur' },
+    { id: 5, nome: 'Charmander' },
+    { id: 6, nome: 'Squirtle' },
+    { id: 7, nome: 'Krabby' },
+    { id: 8, nome: 'Rattata' }, // Capturado fora de tela / menções iniciais ou Raticate trocado
+    { id: 9, nome: 'Primeape' },
+    { id: 10, nome: 'Muk' }
+  ];
+  res.json(pokemonsAsh);
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
