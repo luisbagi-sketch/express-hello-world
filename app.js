@@ -50,6 +50,12 @@ app.post('/series', (req, res) => {
   });
 });
 
+
+app.get('/bug', (req, res) => {
+  const objetoInexistente = null;
+  res.send(objetoInexistente.propriedadeQueNaoExiste);
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
