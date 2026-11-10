@@ -16,6 +16,16 @@ app.get('/meunome', (req, res) => {
   res.send('Meu nome é Luis Gustavo Guisone Bagi');
 });
 
+app.get('/piada', async (req, res) => {
+  try {
+    const resposta = await fetch('https://official-joke-api.appspot.com/random_joke');
+    const dados = await resposta.json();
+    res.json(dados);
+  } catch (erro) {
+    res.status(500).json({ erro: "Falha ao consumir a API externa", detalhes: erro.message });
+  }
+});
+
 app.get('/tico', (req, res) => {
   res.send('teco');
 });
